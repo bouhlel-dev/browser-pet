@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <h1><img src="/icons/icon48.png" width="48" height="48" style="display:inline-block; vertical-align:middle;"> Browser Pet</h1>
+    <div class="stats-section">
+      <h2>Today's Stats</h2>
+      <div class="stat">
+        <span class="stat-label">📚 Productivity:</span>
+        <span id="productivity-stat" class="stat-value">0%</span>
+      </div>
+      <div class="stat-bar-container">
+        <div class="bar">
+          <div id="productivity-bar" class="bar-fill productive"></div>
+        </div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">😅 Procrastination:</span>
+        <span id="procrastination-stat" class="stat-value">0%</span>
+      </div>
+      <div class="stat-bar-container">
+        <div class="bar">
+          <div id="procrastination-bar" class="bar-fill procrastination"></div>
+        </div>
+      </div>
+    </div>
+    <button id="reset-btn" class="btn">Reset Stats</button>
+    <div class="footer">
+      <p>Your pet watches and reacts to your browsing! 👀</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

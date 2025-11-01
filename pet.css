@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: transparent !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+html {
+  background: transparent !important;
+}
+
+#pet-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  pointer-events: auto;
+  background: transparent !important;
+}
+
+.speech-bubble {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 250px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+
+.speech-bubble.angry {
+  background: #fee;
+  border-color: #fcc;
+}
+
+.speech-bubble.angry::after {
+  border-top-color: #fee;
+}
+
+.speech-bubble.worried {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.speech-bubble.worried::after {
+  border-top-color: #fffbeb;
+}
+
+.speech-bubble.excited {
+  background: #faf5ff;
+  border-color: #e9d5ff;
+}
+
+.speech-bubble.excited::after {
+  border-top-color: #faf5ff;
+}
+
+.speech-bubble.happy {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.speech-bubble.happy::after {
+  border-top-color: #f0fdf4;
+}
+
+#pet-message {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+}
+
+.pet {
+  background: transparent;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pet.angry {
+  animation: shake 0.5s infinite;
+}
+
+.pet.worried {
+  animation: bounce 1s infinite;
+}
+
+.pet.excited {
+  animation: jump 0.6s infinite;
+}
+
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-5px) rotate(-3deg); }
+  75% { transform: translateX(5px) rotate(3deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
